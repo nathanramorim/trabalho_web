@@ -1,9 +1,6 @@
 <?php
 
-/**
-*
-*/
-class Vehicles
+class Vehicles extends Model
 {
 
 	function __construct()

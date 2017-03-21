@@ -31,16 +31,16 @@ class Model
         switch ($table) {
             case 'veiculos':
                 $pdo = $this->connect();
-                $consulta = $pdo->query("SELECT ans_code, name FROM operator");
+                $consulta = $pdo->query("SELECT placa, name FROM veiculos");
 
                 while ($row = $consulta->fetch(PDO::FETCH_ASSOC)):
-                    echo '<option value="'.$row['ans_code'].'">'.$row['ans_code'].' - '.$row['name'].'</option>';
+                    echo '<option value="'.$row['placa'].'">'.$row['placa'].' - '.$row['name'].'</option>';
                 endwhile;
 
                 break;
 
             default:
-                # code...
+                
                 break;
         }
     }
@@ -73,27 +73,6 @@ class Model
                 }
                 return $message;
 
-            break;
-            case 'operator':
-                return true;
-            break;
-            case 'plans':
-                return true;
-            break;
-            case 'fx_plans':
-                return true;
-            break;
-            case 'fx_simulator':
-                return true;
-            break;
-            case 'user_group':
-                return false;
-            break;
-            case 'activity':
-                return false;
-            break;
-            case 'accommodation':
-                return false;
             break;
 
             default:
